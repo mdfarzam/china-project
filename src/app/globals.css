@@ -1,15 +1,74 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary-50: #E6F4FF;
+  --primary-100: #CCE9FF;
+  --primary-150: #B3DEFF;
+  --primary-200: #99D3FF;
+  --primary-300: #66BCFF;
+  --primary-400: #33A6FF;
+  --primary-500: #0090FF;
+  --primary-600: #0073CC;
+  --primary-700: #005699;
+  --primary-800: #003A66;
+  --primary-850: #002B4D;
+  --primary-900: #001D33;
+  --primary-950: #000E1A;
+  --primary-1000: #000000;
+
+  --neutral-50: #FBFBFC;
+  --neutral-100: #F7F8F8;
+  --neutral-150: #F2F4F5;
+  --neutral-200: #EEF0F1;
+  --neutral-300: #E6E9EB;
+  --neutral-400: #DDE1E4;
+  --neutral-500: #D5DADD;
+  --neutral-600: #AFB3B6;
+  --neutral-700: #888C8F;
+  --neutral-800: #626668;
+  --neutral-850: #4F5255;
+  --neutral-900: #3B3F41;
+  --neutral-950: #282B2E;
+  --neutral-1000: #15181A;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-family-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-family-mono: var(--font-geist-mono), ui-monospace, monospace;
+  
+  /* Set as default font family */
+  --default-font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-150: var(--primary-150);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-850: var(--primary-850);
+  --color-primary-900: var(--primary-900);
+  --color-primary-950: var(--primary-950);
+  --color-primary-1000: var(--primary-1000);
+
+  /* Neutral */
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-150: var(--neutral-150);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-850: var(--neutral-850);
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-950: var(--neutral-950);
+  --color-neutral-1000: var(--neutral-1000);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +78,18 @@
   }
 }
 
+html {
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+}
+
+/* Ensure all text elements inherit the font */
+p, span, div, h1, h2, h3, h4, h5, h6, a, button, input, textarea, select, label, li {
+  font-family: inherit;
 }
