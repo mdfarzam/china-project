@@ -159,16 +159,17 @@ function Navbar() {
         </div>
       </>
     )
-  }
+  } 
 
   return (
     <div
-      className={`w-full h-fit flex flex-col z-50 transition-colors duration-500 top-0 ${
-        isMenuOpen || scrolled ? 'bg-neutral-50 backdrop-blur-md' : 'bg-neutral-50'
+      className={`w-[90%] mx-auto h-fit flex flex-col z-50 transition-colors duration-500 fixed top-6 left-1/2 -translate-x-1/2 rounded-2xl ${
+        isMenuOpen || scrolled ? 'bg-transparent backdrop-blur-md' : 'bg-transparent'
       }`}
     >
       {/* Main Navbar */}
-      <div className="w-full flex items-center justify-between py-2 md:py-4 px-6 md:px-16">
+      <div className="w-full px-6 flex items-center justify-between py-2 md:py-4 px-0 border border-neutral-400 rounded-2xl font-medium">
+
         {/* Logo */}
         <div className="w-fit flex items-center justify-between">
           <Link href="/" className='flex items-center gap-2'>
@@ -178,7 +179,7 @@ function Navbar() {
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center text-sm lg:text-base text-neutral-1000 font-medium gap-4 lg:gap-6 leading-[120%]">
+        <div className="hidden md:flex items-center text-sm lg:text-base text-neutral-800 font-medium gap-4 lg:gap-6 leading-[120%]">
           {navLinks.map((link, index) => (
             <div key={index} className="relative group">
               {link.hasDropdown ? (
@@ -202,24 +203,14 @@ function Navbar() {
         </div>
 
         {/* Right Side Icons - Desktop */}
-        <div className="hidden md:flex items-center gap-4">
-          {/* Cart/Handbag Icon */}
-          <Link
-            href="/cart"
-            className="relative p-2 text-neutral-1000 hover:text-primary-500 transition-colors"
-          >
-            <Handbag className="w-5 h-5" />
-            {/* Cart badge can be added here */}
-          </Link>
-
+        <div className="hidden md:flex items-center gap-4 font-medium">
           {/* Language Dropdown */}
           <div className="relative">
             <button
               className="flex items-center gap-2 px-3 py-2 text-neutral-1000 hover:text-primary-500 transition-colors rounded-lg hover:bg-neutral-100"
               onClick={() => toggleDropdown('language-desktop')}
             >
-              <Globe className="w-4 h-4" />
-              <span className="text-sm">{selectedLanguage.flag}</span>
+              <span className="text-sm text-[#14181A] font-medium">{selectedLanguage.label}</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
                   openDropdown === 'language-desktop' ? 'rotate-180' : ''
@@ -247,10 +238,19 @@ function Navbar() {
             </DropdownMenu>
           </div>
 
+          {/* Cart/Handbag Icon */}
+          <Link
+            href="/cart"
+            className="relative p-2 text-neutral-900 hover:text-primary-500 transition-colors"
+          >
+            <Handbag className="w-5 h-5" />
+            {/* Cart badge can be added here */}
+          </Link>
+
           {/* Profile Dropdown */}
           <div className="relative">
             <button
-              className="p-2 text-neutral-1000 hover:text-primary-500 transition-colors rounded-lg hover:bg-neutral-100"
+              className="p-2 text-neutral-900 hover:text-primary-500 transition-colors rounded-lg hover:bg-neutral-100"
               onClick={() => toggleDropdown('profile-desktop')}
             >
               <User className="w-5 h-5" />

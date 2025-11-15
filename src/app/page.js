@@ -1,19 +1,25 @@
-import Image from "next/image";
-import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Service from "@/components/Service";
-import StatsSection from "@/components/StatsSection";
-import Footer from "@/components/Footer";
+import CTA from "@/sections/CTA";
+import Faqs from "@/sections/Faqs";
+import Features from "@/sections/Features";
+import Footer from "@/sections/Footer";
+import Hero from "@/sections/Hero";
+import Pricing from "@/sections/Pricing";
+import Seamless from "@/sections/Seamless";
+import Service from "@/sections/Service";
+
 
 export default function Home() {
   return (
     <>
-      <AnnouncementBar />
       <Navbar />
       <Hero />
-      <Service/>
-      <StatsSection/>
+      <Service />
+      <Features />
+      <Seamless />
+      <Pricing />
+      <Faqs />
+      <CTA />
       <Footer/>
     </>
   );

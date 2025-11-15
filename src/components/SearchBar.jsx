@@ -20,7 +20,7 @@ function SearchBar({
   return (
     <form
       onSubmit={handleSubmit}
-      className={`w-full max-w-xl flex items-center bg-[#EEF1F1] border border-[#DDE1E4] rounded-full overflow-hidden shadow-sm px-4 py-2 ${className}`}
+      className={`w-full max-w-lg justify-center flex items-center bg-[#EEF1F1] border border-[#DDE1E4] rounded-full overflow-hidden shadow-sm px-3 py-1 ${className}`}
     >
       {/* Icon */}
       <div className="flex items-center justify-center pr-3">
@@ -39,8 +39,8 @@ function SearchBar({
       {/* Search Button */}
       <button
         type="submit"
-        className="bg-gradient-to-r from-[#0091FE] to-[#33A6FE] text-white font-medium text-sm rounded-full px-8 py-3 -mr-2  transition-all hover:opacity-90"
-      >
+        className="bg-gradient-to-b from-[#66BCFF] to-[#0091FE] text-white font-medium text-sm rounded-full px-8 py-3 -mr-2 transition-all hover:opacity-90"
+>
         Search
       </button>
     </form>

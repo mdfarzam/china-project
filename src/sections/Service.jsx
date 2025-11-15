@@ -1,11 +1,8 @@
-import React from 'react'
 
-// --- Data ---
-// Updated to remove 'icon' and 'color', and include the 'imageUrl' directly.
 const features = [
     {
       title: "Purchase Orders",
-      description: "Share your product link; we'll handle the purchase directly from trusted Chinese marketplaces.",
+      description: "Share your product link we'll handle the purchase directly from trusted Chinese marketplaces.",
       imageUrl: "/features/Purchase_Orders.png", 
     },
     {
@@ -25,18 +22,34 @@ const features = [
     },
 ];
 
-// Component to render a single feature card, strictly using the user's provided classes
+
+const stats = [
+  {
+    value: "20,000+",
+    label: "orders fulfilled worldwide",
+  },
+  {
+    value: "300,000",
+    label: "Product sourced",
+  },
+  {
+    value: "7-12 Days",
+    label: "global shipping",
+  },
+  {
+    value: "60+",
+    label: "Countries served",
+  },
+];
+
+
 const FeatureItem = ({ title, description, imageUrl }) => {
-    // Use an inline style object for the background image property
     const bgStyle = {
-        // Now using the image URL passed directly from the array
         backgroundImage: `url(${imageUrl})`,
     };
 
     return (
-        // Inner item structure and classes maintained
         <div className="flex flex-col gap-4"> 
-            
             {/* Image Container */}
             <div className="bg-primary-50 border-[.5px] border-neutral-500 w-full aspect-4/3 rounded-xl overflow-hidden">
                 {/* Dynamic Background Image setup */}
@@ -59,33 +72,38 @@ const FeatureItem = ({ title, description, imageUrl }) => {
 };
 
 
-// Main Service Component (Exported as App for the React environment)
-function App() { // Renamed from Service to App for export
+function App() { 
   return (
-    // Outer container classes maintained
     <div className='flex flex-col w-full h-fit py-16 px-16 gap-10 bg-neutral-50 font-medium'>
         
-        {/* Title maintained */}
         <h2 className='text-5xl text-neutral-1000 tracking-[-0.04em] leading-[1.2]'>One-Stop Service with Us</h2>
-        
-        {/* This container uses a responsive grid to ensure all 4 items display horizontally 
-          on larger screens while maintaining the required gap-8. 
-        */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 h-fit tracking-[-0.04em] leading-[1.2]" > 
-            
-            {/* Using .map() to dynamically render all features */}
             {features.map((feature, index) => (
                 <FeatureItem 
                     key={index}
                     title={feature.title}
                     description={feature.description}
-                    // Passing the direct image URL
                     imageUrl={feature.imageUrl}
                 />
             ))}
-            <div className="w-6xl mx-auto h-[1px] bg-[#E6E9EB] mt-8" />
         </div>
-        
+
+{/* stats */}
+        <div className="flex items-center justify-between bg-neutral-50 ">
+            {stats.map((stat, index) => (
+                <div key={index} className="flex flex-col items-start md:items-center text-left md:text-center">
+                    {/* Value: Large, blue, bold text */}
+                    <p className="text-3xl sm:text-4xl md:text-5xl font-medium bg-linear-to-b from-primary-500 to-primary-400 bg-clip-text text-transparent leading-tight ">
+                        {stat.value}
+                    </p>
+                    {/* Label: Subtext */}
+                    <p className="text-sm sm:text-base font-medium text-neutral-900 mt-1 ">
+                        {stat.label}
+                    </p>
+                </div>
+            ))}
+        </div>
     </div>
   )
 }

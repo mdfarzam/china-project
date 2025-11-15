@@ -2,8 +2,8 @@
 import React from "react"
 import { ArrowUpRight, Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
 import { useRouter } from "next/navigation"
-import Tag from "./Tag"
-import SearchBar from './SearchBar'
+import Tag from "../components/Tag"
+import SearchBar from '../components/SearchBar'
 
 const Footer = () => {
   const router = useRouter()
