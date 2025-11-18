@@ -163,7 +163,7 @@ function Navbar() {
 
   return (
     <div
-      className={`w-[90%] mx-auto h-fit flex flex-col z-50 transition-colors duration-500 fixed top-6 left-1/2 -translate-x-1/2 rounded-2xl ${
+      className={`w-[91%] mx-auto h-fit flex flex-col z-50 transition-colors duration-500 fixed top-6 left-1/2 -translate-x-1/2 rounded-2xl ${
         isMenuOpen || scrolled ? 'bg-transparent backdrop-blur-md' : 'bg-transparent'
       }`}
     >

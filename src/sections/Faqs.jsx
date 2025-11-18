@@ -36,28 +36,30 @@ const faqs = [
 
 const Faqs = () => {
   return (
-    <section className="min-h-screen py-20 bg-gray-50 px-6 bg-white">
+    <section className="min-h-screen py-20 bg-[#FBFBFD] px-6">
       <div className="max-w-7xl mx-auto px-8 flex flex-col lg:flex-row gap-16 tracking-[-0.04em] leading-[1.2]">
 
-        {/* Left Side - Top-Aligned Plain Text */}
-        <div className="flex flex-col lg:w-2/5 space-y-2">
-          <h1 className="text-5xl font-medium text-gray-900 ">
+        {/* Left Side */}
+        <div className="flex flex-col lg:w-2/5 space-y-4">
+          <h1 className="text-5xl font-medium text-neutral-1000 leading-[1.2]">
             Frequently Asked <br/> Questions
           </h1>
-          <p className="text-gray-600 text-sm leading-relaxed max-w-md">
+
+          <p className="text-sm font-medium text-neutral-850 leading-[1.5] max-w-md">
             You can find the answers to frequently asked questions below.
           </p>
         </div>
 
-        {/* Right Side - Accordion without hover underline */}
+        {/* Right Side – Accordion */}
         <div className="flex-1 lg:w-3/5 space-y-2">
           <Accordion type="single" collapsible className="w-full space-y-2">
             {faqs.map((item, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="group">
-                <AccordionTrigger className="px-4 py-3 text-lg font-medium text-gray-900 no-underline hover:no-underline transition-colors">
+                <AccordionTrigger className="px-4 py-3 text-base font-medium text-neutral-1000 tracking-[-0.04em] leading-[1.3] no-underline hover:no-underline">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="px-4 pb-3 text-gray-700 text-sm">
+
+                <AccordionContent className="px-4 pb-3 text-sm font-medium text-neutral-850 tracking-[-0.04em] leading-[1.5]">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>

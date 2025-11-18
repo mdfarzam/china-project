@@ -151,7 +151,22 @@ body {
 }
 
 /* Ensure all text elements inherit the font */
-p, span, div, h1, h2, h3, h4, h5, h6, a, button, input, textarea, select, label, li {
+p,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+button,
+input,
+textarea,
+select,
+label,
+li {
   font-family: inherit;
 }
 
@@ -193,7 +208,20 @@ p, span, div, h1, h2, h3, h4, h5, h6, a, button, input, textarea, select, label,
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
+  /* HEADINGS */
+  .h2-style {
+    @apply text-5xl font-medium leading-[1.2] tracking-[-0.04em] text-neutral-900;
+  }
+
+  /* PARAGRAPHS */
+  .p-style {
+    @apply text-sm font-medium text-neutral-800 leading-[1.4] tracking-[-0.01em];
+  }
+
+
 }

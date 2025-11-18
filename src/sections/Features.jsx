@@ -4,22 +4,22 @@ const Features = () => {
 
       {/* Header */}
       <div>
-        <h2 className="text-4xl md:text-5xl text-neutral-900 tracking-[-0.04em] leading-[1.2]">
-          Why Choose Cartigo
-        </h2>
+        <h2 className="h2-style">Why Choose Cartigo</h2>
       </div>
 
       {/* Bento Grid */}
-      <div className="flex w-full gap-6 h-[450px] tracking-[-0.04em] leading-[1.2]">
+      <div className="flex w-full gap-6 h-[480px]">
 
         {/* LEFT */}
         <div className="w-1/3 h-full bg-[#EEF1F1] rounded-2xl px-5 py-4 border border-neutral-200 flex flex-col">
           <div className="flex flex-col gap-1">
             <h3 className="text-lg text-neutral-1000">Responsive Support</h3>
-            <p className="text-neutral-800 text-sm font-medium">
-              Our support team is always ready to help with quick, friendly responses and clear solutions whenever you need assistance.
+            <p className="p-style">
+              Our support team is always ready to help with quick, friendly responses and clear
+              solutions whenever you need assistance.
             </p>
           </div>
+
           <div>
             <img
               src="/PC Bento/Frame 63.png"
@@ -34,35 +34,34 @@ const Features = () => {
 
           {/* TOP */}
           <div className="flex-1 bg-[#EEF1F1] rounded-2xl px-5 pb-4 border border-neutral-200 flex flex-col justify-between">
+            <img
+              src="/PC Bento/Frame 63 (1).png"
+              alt=""
+              className="max-h object-contain pb-1"
+            />
 
-            <div>
-              <img
-                src="/PC Bento/Frame 63 (1).png"
-                alt=""
-                className="max-h object-contain pb-1"
-              />
-            </div>
             <div className="flex flex-col gap-1">
               <h3 className="text-lg text-neutral-1000">Trusted Logistics</h3>
-              <p className="text-neutral-800 text-sm font-medium">
-                Every shipment is handled by trusted logistics partners for secure, and worry-free delivery.
+              <p className="p-style">
+                Every shipment is handled by trusted logistics partners for secure, and
+                worry-free delivery.
               </p>
             </div>
           </div>
 
           {/* BOTTOM */}
           <div className="flex-1 bg-[#EEF1F1] rounded-2xl px-5 pb-4 border border-neutral-200 flex flex-col justify-between">
-            <div>
-              <img
-                src="/PC Bento/Frame 63 (2).png"
-                alt=""
-                className="max-h object-contain "
-              />
-            </div>
+            <img
+              src="/PC Bento/Frame 63 (2).png"
+              alt=""
+              className="max-h object-contain"
+            />
+
             <div className="flex flex-col gap-1">
               <h3 className="text-lg text-neutral-1000">Global Reach</h3>
-              <p className="text-neutral-800 text-sm font-medium">
-                From China to your doorstep we make international delivery simple, fast, and worry-free.
+              <p className="p-style">
+                From China to your doorstep we make international delivery simple, fast,
+                and worry-free.
               </p>
             </div>
           </div>
@@ -71,11 +70,11 @@ const Features = () => {
         {/* RIGHT */}
         <div className="w-1/3 h-full bg-[#EEF1F1] rounded-2xl px-5 pt-4 border border-neutral-200 flex flex-col">
 
-          {/* TEXT */}
           <div className="flex flex-col gap-1">
             <h3 className="text-lg text-neutral-1000">Transparent Pricing</h3>
-            <p className="text-neutral-800 text-sm font-medium">
-              You always know what you're paying for. No hidden fees, no surprises just clear and fair pricing at every stage of your order.
+            <p className="p-style">
+              You always know what you're paying for. No hidden fees, no surprises —
+              just clear and fair pricing at every stage of your order.
             </p>
           </div>
 
@@ -87,6 +86,7 @@ const Features = () => {
             />
           </div>
         </div>
+
       </div>
     </div>
   );
