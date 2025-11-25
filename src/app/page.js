@@ -16,8 +16,8 @@ import SignIn from "@/sections/SignIn";
 export default function Home() {
   return (
     <>
-      {/* <Navbar />   */}
-      <SignIn/>
+      <Navbar />  
+      {/* <SignIn/> */}
       {/* <DropshippingDashboard/> */}
       {/* <ProductDetailPage/> */}
       <Hero />
