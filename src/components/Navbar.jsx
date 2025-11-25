@@ -12,6 +12,16 @@ const navLinks = [
     hasDropdown: false,
   },
   {
+    href: '/products',
+    label: 'Products',
+    hasDropdown: true,
+    dropdownItems: [
+      { href: '/product-list', label: 'Product List (Dark)' },
+      { href: '/product-list-light', label: 'Product List (Light)' },
+      { href: '/product-details', label: 'Product Details' },
+    ],
+  },
+  {
     href: '/categories',
     label: 'Categories',
     hasDropdown: true,
@@ -87,8 +97,8 @@ function Navbar() {
     if (!link.hasDropdown) return null
 
     return (
-      <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-neutral-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto z-50">
-        <div className="py-2">
+      <div className="absolute top-full left-0 pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto z-50">
+        <div className="bg-white rounded-lg shadow-lg border border-neutral-200 py-2">
           {link.dropdownItems.map((item, index) => (
             <Link
               key={index}
@@ -153,9 +163,11 @@ function Navbar() {
           onClick={onClose}
         />
         <div
-          className={`absolute top-full mt-2 ${position === 'right' ? 'right-0' : 'left-0'} w-56 bg-white rounded-lg shadow-lg border border-neutral-200 z-50`}
+          className={`absolute top-full pt-2 ${position === 'right' ? 'right-0' : 'left-0'} w-56 z-50`}
         >
-          {children}
+          <div className="bg-white rounded-lg shadow-lg border border-neutral-200">
+            {children}
+          </div>
         </div>
       </>
     )
@@ -168,7 +180,7 @@ function Navbar() {
       }`}
     >
       {/* Main Navbar */}
-      <div className="w-full px-6 flex items-center justify-between py-2 md:py-4 px-0 border border-neutral-400 rounded-2xl font-medium">
+      <div className="w-full px-6 flex items-center justify-between py-2 md:py-4 border border-neutral-400 rounded-2xl font-medium">
 
         {/* Logo */}
         <div className="w-fit flex items-center justify-between">

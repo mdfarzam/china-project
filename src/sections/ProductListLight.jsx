@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Search, ShoppingCart, User, Heart, Star } from "lucide-react";
 import { useState } from "react";
 
-export default function ProductListPage() {
+export default function ProductListLightPage() {
   const [activeSupplier, setActiveSupplier] = useState("all");
 
   const products = [
@@ -67,9 +67,9 @@ export default function ProductListPage() {
     : products.filter(p => p.supplier === activeSupplier);
 
   return (
-    <div className="min-h-screen bg-neutral-1000">
+    <div className="min-h-screen bg-white">
       {/* NAVBAR */}
-      <nav className="border-b border-neutral-950 bg-neutral-1000">
+      <nav className="border-b border-neutral-200 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -81,28 +81,28 @@ export default function ProductListPage() {
             {/* Search Bar */}
             <div className="hidden md:flex flex-1 max-w-xl mx-8">
               <div className="relative w-full">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-600" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
                 <input
                   type="text"
                   placeholder="Search products..."
-                  className="w-full bg-neutral-950 border border-neutral-900 rounded-lg pl-10 pr-4 py-2.5 text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 transition-all"
+                  className="w-full bg-neutral-50 border border-neutral-300 rounded-lg pl-10 pr-4 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-500 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 focus:bg-white transition-all"
                 />
               </div>
             </div>
 
             {/* Right Icons */}
             <div className="flex items-center gap-3">
-              <button className="p-2 hover:bg-neutral-950 rounded-lg transition-colors">
-                <Heart className="w-5 h-5 text-neutral-500 hover:text-white" />
+              <button className="p-2 hover:bg-neutral-100 rounded-lg transition-colors">
+                <Heart className="w-5 h-5 text-neutral-700" />
               </button>
-              <button className="relative p-2 hover:bg-neutral-950 rounded-lg transition-colors">
-                <ShoppingCart className="w-5 h-5 text-neutral-500 hover:text-white" />
+              <button className="relative p-2 hover:bg-neutral-100 rounded-lg transition-colors">
+                <ShoppingCart className="w-5 h-5 text-neutral-700" />
                 <span className="absolute top-0 right-0 w-4 h-4 bg-primary-500 rounded-full text-[10px] font-medium flex items-center justify-center text-white">
                   3
                 </span>
               </button>
-              <button className="p-2 hover:bg-neutral-950 rounded-lg transition-colors">
-                <User className="w-5 h-5 text-neutral-500 hover:text-white" />
+              <button className="p-2 hover:bg-neutral-100 rounded-lg transition-colors">
+                <User className="w-5 h-5 text-neutral-700" />
               </button>
             </div>
           </div>
@@ -117,22 +117,22 @@ export default function ProductListPage() {
             Home
           </Link>
           <span>/</span>
-          <span className="text-white font-medium">Search Results</span>
+          <span className="text-neutral-900 font-medium">Search Results</span>
         </div>
 
         {/* Page Title */}
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold text-white mb-2">
+          <h1 className="text-3xl font-semibold text-neutral-900 mb-2">
             Search Results
           </h1>
-          <p className="text-neutral-500">
-            Found <span className="font-medium text-white">{filteredProducts.length} products</span> for "keyboard"
+          <p className="text-neutral-600">
+            Found <span className="font-medium text-neutral-900">{filteredProducts.length} products</span> for "keyboard"
           </p>
         </div>
 
         {/* Supplier Tabs */}
         <div className="mb-8">
-          <div className="border-b border-neutral-950">
+          <div className="border-b border-neutral-200">
             <div className="flex gap-1">
               {suppliers.map((supplier) => (
                 <button
@@ -141,11 +141,11 @@ export default function ProductListPage() {
                   className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors ${
                     activeSupplier === supplier.id
                       ? "border-primary-500 text-primary-500"
-                      : "border-transparent text-neutral-500 hover:text-white"
+                      : "border-transparent text-neutral-600 hover:text-neutral-900"
                   }`}
                 >
                   {supplier.name}
-                  <span className="ml-2 text-xs text-neutral-700">({supplier.count})</span>
+                  <span className="ml-2 text-xs text-neutral-500">({supplier.count})</span>
                 </button>
               ))}
             </div>
@@ -155,13 +155,13 @@ export default function ProductListPage() {
         {/* Filters */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <select className="bg-neutral-950 border border-neutral-900 rounded-lg px-3 py-2 text-sm text-neutral-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/30">
+            <select className="bg-white border border-neutral-300 rounded-lg px-3 py-2 text-sm text-neutral-700 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500">
               <option>Sort by: Relevance</option>
               <option>Price: Low to High</option>
               <option>Price: High to Low</option>
               <option>Rating</option>
             </select>
-            <select className="bg-neutral-950 border border-neutral-900 rounded-lg px-3 py-2 text-sm text-neutral-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/30">
+            <select className="bg-white border border-neutral-300 rounded-lg px-3 py-2 text-sm text-neutral-700 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500">
               <option>All Categories</option>
               <option>Electronics</option>
               <option>Accessories</option>
@@ -178,10 +178,10 @@ export default function ProductListPage() {
             <Link
               key={product.id}
               href={`/product-details?id=${product.id}`}
-              className="group flex flex-col bg-neutral-950/40 border border-neutral-900 rounded-xl overflow-hidden hover:border-neutral-800 transition-colors duration-200"
+              className="group flex flex-col bg-white border border-neutral-200 rounded-xl overflow-hidden hover:border-neutral-300 transition-colors duration-200"
             >
               {/* Image */}
-              <div className="relative aspect-square bg-neutral-900 overflow-hidden">
+              <div className="relative aspect-square bg-neutral-50 overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.title}
@@ -194,9 +194,9 @@ export default function ProductListPage() {
                     e.preventDefault();
                     e.stopPropagation();
                   }}
-                  className="absolute top-3 right-3 w-8 h-8 bg-black/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:bg-neutral-950"
+                  className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-sm hover:bg-neutral-50"
                 >
-                  <Heart className="w-4 h-4 text-neutral-400" />
+                  <Heart className="w-4 h-4 text-neutral-700" />
                 </button>
               </div>
 
@@ -204,7 +204,7 @@ export default function ProductListPage() {
               <div className="flex flex-col flex-1 p-4 gap-3">
                 {/* Supplier Badge & Rating */}
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 px-2 py-1 bg-neutral-900 border border-neutral-800 rounded-md">
+                  <div className="flex items-center gap-1.5 px-2 py-1 bg-neutral-50 border border-neutral-200 rounded-md">
                     <Image 
                       src={`/Suppliers/${product.supplier}.svg`} 
                       alt={product.supplier} 
@@ -212,19 +212,19 @@ export default function ProductListPage() {
                       height={16}
                       className="w-4 h-4"
                     />
-                    <span className="text-xs font-medium text-neutral-400 capitalize">
+                    <span className="text-xs font-medium text-neutral-700 capitalize">
                       {product.supplier}
                     </span>
                   </div>
                   <div className="flex items-center gap-1">
                     <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                    <span className="text-xs font-medium text-neutral-400">{product.rating}</span>
-                    <span className="text-xs text-neutral-700">({product.reviews})</span>
+                    <span className="text-xs font-medium text-neutral-700">{product.rating}</span>
+                    <span className="text-xs text-neutral-500">({product.reviews})</span>
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-sm font-medium text-white line-clamp-2 leading-snug">
+                <h3 className="text-sm font-medium text-neutral-900 line-clamp-2 leading-snug">
                   {product.title}
                 </h3>
 
@@ -234,12 +234,12 @@ export default function ProductListPage() {
                 </p>
 
                 {/* Price */}
-                <div className="pt-3 border-t border-neutral-900">
+                <div className="pt-3 border-t border-neutral-100">
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-xl font-semibold text-white">
+                    <span className="text-xl font-semibold text-neutral-900">
                       ${product.price}
                     </span>
-                    <span className="text-xs text-neutral-600">USD</span>
+                    <span className="text-xs text-neutral-500">USD</span>
                   </div>
                 </div>
               </div>
@@ -249,19 +249,19 @@ export default function ProductListPage() {
 
         {/* Pagination */}
         <div className="flex items-center justify-center gap-2 mt-12">
-          <button className="px-4 py-2 border border-neutral-900 rounded-lg text-sm font-medium text-neutral-500 hover:bg-neutral-950 hover:text-white transition-colors">
+          <button className="px-4 py-2 border border-neutral-300 rounded-lg text-sm font-medium text-neutral-700 hover:bg-neutral-50 transition-colors">
             Previous
           </button>
           <button className="px-4 py-2 bg-primary-500 text-white rounded-lg text-sm font-medium">
             1
           </button>
-          <button className="px-4 py-2 border border-neutral-900 rounded-lg text-sm font-medium text-neutral-500 hover:bg-neutral-950 hover:text-white transition-colors">
+          <button className="px-4 py-2 border border-neutral-300 rounded-lg text-sm font-medium text-neutral-700 hover:bg-neutral-50 transition-colors">
             2
           </button>
-          <button className="px-4 py-2 border border-neutral-900 rounded-lg text-sm font-medium text-neutral-500 hover:bg-neutral-950 hover:text-white transition-colors">
+          <button className="px-4 py-2 border border-neutral-300 rounded-lg text-sm font-medium text-neutral-700 hover:bg-neutral-50 transition-colors">
             3
           </button>
-          <button className="px-4 py-2 border border-neutral-900 rounded-lg text-sm font-medium text-neutral-500 hover:bg-neutral-950 hover:text-white transition-colors">
+          <button className="px-4 py-2 border border-neutral-300 rounded-lg text-sm font-medium text-neutral-700 hover:bg-neutral-50 transition-colors">
             Next
           </button>
         </div>
